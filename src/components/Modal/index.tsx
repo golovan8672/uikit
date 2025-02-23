@@ -4,6 +4,7 @@ import {Transition} from 'react-transition-group';
 import s from './Modal.module.css';
 import {useRef} from 'react';
 import {AwayListener} from '../common/EscGlobalListener';
+import { Overlay } from '../common/Overlay';
 
 interface ModalProps {
   open: boolean;
@@ -24,13 +25,12 @@ export function Modal({open, onClose, children}: ModalProps) {
     >
       {(state) => (
         <AwayListener onClose={onClose}>
-          <div
-            className={cn(s.overlay, s[`overlay-${state}`])}
+          <Overlay
             onClick={onClose}
+            transitionState={state}
           />
           <div
             className={cn(s.modal, s[`modal-${state}`])}
-            tabIndex={-1}
             ref={modalRef}
           >
             {children}

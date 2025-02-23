@@ -1,9 +1,10 @@
 import {createPortal} from 'react-dom';
 import cn from 'classnames';
-import {Transition} from 'react-transition-group';
+import {Transition, type TransitionStatus} from 'react-transition-group';
 import s from './Drawer.module.css';
 import {useRef} from 'react';
 import {AwayListener} from '../common/EscGlobalListener';
+import { Overlay } from '../common/Overlay';
 
 interface DrawerProps {
   open: boolean;
@@ -24,8 +25,8 @@ export function Drawer({open, onClose, children}: DrawerProps) {
     >
       {(state) => (
         <AwayListener onClose={onClose}>
-          <div
-            className={cn(s.overlay, s[`overlay-${state}`])}
+          <Overlay
+            transitionState={state}
             onClick={onClose}
           />
           <div
