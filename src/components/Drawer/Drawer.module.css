@@ -1,0 +1,38 @@
+.drawer {
+  position: absolute;
+  box-sizing: border-box;
+  width: 350px;
+  height: 100vh;
+  background-color: white;
+  padding: 20px;
+  top: 0;
+  right: 0;
+  transform: translateX(350px);
+}
+  
+.drawer-entered {
+  transition: transform 255ms;
+  transform: none;
+}
+
+.drawer-exiting {
+  transition: transform 255ms;
+  transform: translateX(350px);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+}
+
+.overlay-entered {
+  transition: opacity 195ms;
+  opacity: 1;
+}
+
+.overlay-exiting {
+  transition: opacity 195ms;
+  opacity: 0;
+}
