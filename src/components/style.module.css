@@ -1,0 +1,39 @@
+.menu {
+  max-width: 250px;
+  max-height: 200px;
+  padding: 6px 0;
+  margin: 6px 0px;
+  background: #cacaca;
+  transition: opacity 250ms ease-in-out;
+  border-radius: 4px;
+  opacity: 0;
+}
+
+.menu-entered {
+  opacity: 1;
+}
+
+.menu-exiting {
+  transition: opacity 400ms ease-in-out;
+}
+
+.menu-exited {
+  opacity: 0;
+}
+
+.item {
+  padding: 0 8px;
+  display: flex;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  align-items: center;
+  min-height: 36px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: black;
+  
+}
+
+.item:hover {
+  background-color: #acacac;
+}
